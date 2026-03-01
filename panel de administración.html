@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eebd2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221d10",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .fleur-de-lis-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100' fill='%23eebd2b10'%3E%3Cpath d='M50 10C50 10 45 35 30 40C30 40 20 35 20 25C20 15 35 10 35 10C35 10 35 25 35 30C35 35 40 45 50 50C60 45 65 35 65 30C65 25 65 10 65 10C65 10 80 15 80 25C80 35 70 40 70 40C55 35 50 10 50 10ZM50 90C50 90 55 65 70 60C70 60 80 65 80 75C80 85 65 90 65 90C65 90 65 75 65 70C65 65 60 55 50 50C40 55 35 65 35 70C35 75 35 90 35 90C35 90 20 85 20 75C20 65 30 60 30 60C45 65 50 90 50 90Z'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        body {
+            font-family: 'Newsreader', serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden fleur-de-lis-bg">
+<header class="flex items-center justify-between border-b border-primary/20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">Ágora Literaria <span class="text-primary/70 font-light ml-2">Admin</span></h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="hidden md:flex items-center bg-primary/5 border border-primary/20 rounded-lg px-3 py-1.5 w-64">
+<span class="material-symbols-outlined text-primary/60 text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-primary/40" placeholder="Buscar manuscritos..." type="text"/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg size-10 bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex items-center justify-center rounded-lg size-10 bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Perfil de administrador académico" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJqqYG40qVZ7yGuSN-N9tkKHyWfmRStjJOc0fiPq9_MSFFw3I5JiawGOqXztfDC4vF_INxnetRuSLaOMvDVMWlBHORARaqH8OBili1STGX-5iExcKlvqIBUyBezdGdiZYf-xe2XmglHfovHT9uoIredsdeEbwzwgmmf_2w7Sx1_vCx43IRXFatr48VBzIwv_f8gZr4rjBiCadc2WnpLukq-hEvsqQi4MFwHvjsTyZTGel5b242qwVVmShZOinkJos3eiHNjicp"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<aside class="w-64 border-r border-primary/10 bg-background-light dark:bg-background-dark p-4 hidden lg:flex flex-col gap-2">
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-background-dark font-bold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">article</span>
+<span>Artículos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span>Poemas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Usuarios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Métricas</span>
+</a>
+</nav>
+<div class="mt-auto p-4 border-t border-primary/10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">lock_open</span>
+<div class="text-xs">
+<p class="text-slate-400 italic">Sesión Segura</p>
+<p class="text-primary font-bold uppercase tracking-widest">Nivel III</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-6 md:p-8">
+<div class="max-w-6xl mx-auto space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl md:text-4xl font-display font-bold text-slate-900 dark:text-slate-100 italic">Gabinete de Control</h1>
+<p class="text-slate-500 dark:text-slate-400 font-display italic">Resumen analítico de la actividad literaria actual.</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+                                Exportar Reporte
+                            </button>
+<button class="bg-primary text-background-dark px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span>
+                                Nuevo Artículo
+                            </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-background-light dark:bg-background-dark border border-primary/20 rounded-xl p-6 shadow-xl shadow-primary/5">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-2xl">group</span>
+</div>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">+12%</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Total Usuarios</p>
+<h3 class="text-3xl font-bold text-slate-900 dark:text-slate-100">1,284</h3>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-primary/20 rounded-xl p-6 shadow-xl shadow-primary/5">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-2xl">article</span>
+</div>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">+5%</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Artículos Publicados</p>
+<h3 class="text-3xl font-bold text-slate-900 dark:text-slate-100">456</h3>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-primary/20 rounded-xl p-6 shadow-xl shadow-primary/5">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-2xl">star</span>
+</div>
+<span class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded">Top</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Poemas Populares</p>
+<h3 class="text-3xl font-bold text-slate-900 dark:text-slate-100">82</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-background-light dark:bg-background-dark border border-primary/20 rounded-xl p-6">
+<h4 class="text-lg font-display font-bold mb-6 italic text-primary">Actividad Semanal</h4>
+<div class="h-64 flex items-end justify-between gap-2 px-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-[40%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">120</div>
+</div>
+<div class="w-full bg-primary/30 rounded-t-sm h-[65%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">180</div>
+</div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[50%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">150</div>
+</div>
+<div class="w-full bg-primary/50 rounded-t-sm h-[85%] relative group border-t-4 border-primary">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">240</div>
+</div>
+<div class="w-full bg-primary/30 rounded-t-sm h-[60%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">170</div>
+</div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[45%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">130</div>
+</div>
+<div class="w-full bg-primary/10 rounded-t-sm h-[30%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">90</div>
+</div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest px-1">
+<span>Lun</span><span>Mar</span><span>Mie</span><span>Jue</span><span>Vie</span><span>Sab</span><span>Dom</span>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-primary/20 rounded-xl p-6">
+<h4 class="text-lg font-display font-bold mb-6 italic text-primary">Poemas más Laureados</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 border-b border-primary/10 last:border-0">
+<div class="flex items-center gap-3">
+<div class="text-primary"><span class="material-symbols-outlined">ink_pen</span></div>
+<div>
+<p class="font-bold text-slate-200">El Eco de los Abismos</p>
+<p class="text-xs text-slate-500">Autor: L. De la Vega</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">1.2k</p>
+<p class="text-[10px] uppercase text-slate-500">Lecturas</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 border-b border-primary/10 last:border-0">
+<div class="flex items-center gap-3">
+<div class="text-primary"><span class="material-symbols-outlined">ink_pen</span></div>
+<div>
+<p class="font-bold text-slate-200">Versos Olvidados</p>
+<p class="text-xs text-slate-500">Autor: Clara Luna</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">943</p>
+<p class="text-[10px] uppercase text-slate-500">Lecturas</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 border-b border-primary/10 last:border-0">
+<div class="flex items-center gap-3">
+<div class="text-primary"><span class="material-symbols-outlined">ink_pen</span></div>
+<div>
+<p class="font-bold text-slate-200">Sombras de Otoño</p>
+<p class="text-xs text-slate-500">Autor: Roberto S.</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">812</p>
+<p class="text-[10px] uppercase text-slate-500">Lecturas</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark border border-primary/20 rounded-xl overflow-hidden">
+<div class="p-6 border-b border-primary/10 flex justify-between items-center">
+<h4 class="text-lg font-display font-bold italic text-primary">Últimas Publicaciones</h4>
+<button class="text-xs text-primary hover:underline font-bold tracking-widest uppercase">Ver todo el archivo</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary/5 text-primary text-xs uppercase tracking-widest">
+<th class="px-6 py-4 font-bold">Título</th>
+<th class="px-6 py-4 font-bold">Estado</th>
+<th class="px-6 py-4 font-bold">Autor</th>
+<th class="px-6 py-4 font-bold">Fecha</th>
+<th class="px-6 py-4 font-bold">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/10 text-sm">
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-200 italic">La Retórica del Silencio</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-medium text-emerald-500 border border-emerald-500/20">Publicado</span>
+</td>
+<td class="px-6 py-4 text-slate-400">J. P. Sartre (Guest)</td>
+<td class="px-6 py-4 text-slate-500">22 Oct, 1923</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<button class="text-primary hover:text-primary/70 transition-colors"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-slate-500 hover:text-red-500 transition-colors"><span class="material-symbols-outlined text-xl">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-200 italic">Antología del Olvido</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary border border-primary/20">Revisión</span>
+</td>
+<td class="px-6 py-4 text-slate-400">Isabel Allende</td>
+<td class="px-6 py-4 text-slate-500">20 Oct, 1923</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<button class="text-primary hover:text-primary/70 transition-colors"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-slate-500 hover:text-red-500 transition-colors"><span class="material-symbols-outlined text-xl">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-200 italic">Cien Años de Soledad (Borrador)</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-slate-500/10 px-2 py-0.5 text-xs font-medium text-slate-500 border border-slate-500/20">Borrador</span>
+</td>
+<td class="px-6 py-4 text-slate-400">G. García Márquez</td>
+<td class="px-6 py-4 text-slate-500">18 Oct, 1923</td>
+<td class="px-6 py-4">
+<div class="flex gap-2">
+<button class="text-primary hover:text-primary/70 transition-colors"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-slate-500 hover:text-red-500 transition-colors"><span class="material-symbols-outlined text-xl">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="fixed inset-0 z-[100] bg-background-dark flex items-center justify-center p-4 backdrop-blur-xl hidden">
+<div class="bg-background-dark border border-primary/30 rounded-2xl p-8 max-w-md w-full shadow-2xl shadow-primary/20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl text-primary">lock</span>
+</div>
+<div class="relative z-10 text-center space-y-6">
+<div class="size-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20">
+<span class="material-symbols-outlined text-5xl text-primary">security</span>
+</div>
+<div class="space-y-2">
+<h2 class="text-3xl font-display font-bold italic text-slate-100">Cámara de Seguridad</h2>
+<p class="text-slate-400 text-sm italic">"Donde muere la palabra, nace el silencio del sabio."</p>
+</div>
+<div class="space-y-4 pt-4">
+<div class="relative">
+<input class="w-full bg-primary/5 border border-primary/30 rounded-xl px-5 py-4 focus:ring-primary focus:border-primary text-center text-xl tracking-[0.5em] font-mono text-primary placeholder:text-primary/20 placeholder:font-sans placeholder:tracking-normal" placeholder="Clave de Acceso" type="password"/>
+<div class="absolute inset-y-0 right-4 flex items-center text-primary/40">
+<span class="material-symbols-outlined">key</span>
+</div>
+</div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Hint: Lázaro2003</p>
+<button class="w-full bg-primary text-background-dark font-bold py-4 rounded-xl hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20">
+                            Franquear el Paso
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
