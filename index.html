@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eebd2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#0a1128", // Deep navy blue as requested
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .ornate-border {
+            border: 2px solid #eebd2b;
+            position: relative;
+            padding: 2rem;
+        }
+        .ornate-border::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid #eebd2b;
+            pointer-events: none;
+        }
+        .fleur-de-lis-bg {
+            background-image: radial-gradient(circle at center, rgba(238, 189, 43, 0.05) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden fleur-de-lis-bg">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/30 px-6 md:px-20 py-6">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">history_edu</span>
+<h2 class="text-2xl font-bold italic tracking-tight">Ágora Literaria</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<a class="text-slate-100 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Biblioteca</a>
+<a class="text-slate-100 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Círculos</a>
+<a class="text-slate-100 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Crónicas</a>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-primary text-background-dark text-sm font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                        Entrar
+                    </button>
+</nav>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
+<div class="max-w-[1000px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8 text-center lg:text-left">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1">settings_suggest</span>
+<h1 class="text-primary text-5xl md:text-7xl font-black leading-tight italic">
+                                El Arte de la <br/>Palabra Eterna
+                            </h1>
+<p class="text-slate-300 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed font-light italic">
+                                "Donde las letras cobran vida en un rincón del pasado real. Un santuario para los amantes del manuscrito y la sabiduría clásica."
+                            </p>
+</div>
+<div class="pt-4">
+<button class="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-primary text-primary rounded-lg font-bold uppercase tracking-widest hover:bg-primary hover:text-background-dark transition-all duration-300 group">
+                                Explorar el Legado
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">auto_stories</span>
+</button>
+</div>
+</div>
+<div class="w-full max-w-md mx-auto">
+<div class="ornate-border bg-background-dark/50 backdrop-blur-sm shadow-2xl rounded-xl">
+<div class="flex flex-col items-center mb-8">
+<span class="material-symbols-outlined text-primary text-5xl mb-2" style="font-variation-settings: 'FILL' 1">local_florist</span>
+<h2 class="text-3xl font-bold text-primary italic">Únete al Ágora</h2>
+<div class="h-px w-24 bg-primary mt-4"></div>
+</div>
+<form class="space-y-6">
+<div class="flex flex-col gap-2">
+<label class="text-primary text-sm uppercase tracking-widest font-semibold ml-1">Nombre Completo</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">person</span>
+<input class="w-full pl-12 pr-4 py-4 bg-background-dark border border-primary/30 rounded-lg text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-500 italic" placeholder="Ej. Alejandro Dumas" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-primary text-sm uppercase tracking-widest font-semibold ml-1">Correo Electrónico</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-background-dark border border-primary/30 rounded-lg text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-500 italic" placeholder="usuario@manuscrito.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-primary text-sm uppercase tracking-widest font-semibold ml-1">Contraseña</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">lock</span>
+<input class="w-full pl-12 pr-4 py-4 bg-background-dark border border-primary/30 rounded-lg text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-500 italic" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-background-dark font-bold uppercase tracking-[0.2em] rounded-lg shadow-lg hover:shadow-primary/40 active:scale-[0.98] transition-all" type="submit">
+                                    Inscribirse
+                                </button>
+<div class="text-center mt-6">
+<p class="text-slate-400 italic">
+                                        ¿Ya eres miembro? 
+                                        <a class="text-primary hover:underline font-semibold ml-1 tracking-wide" href="#">Iniciar Sesión</a>
+</p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto border-t border-primary/10 py-8 px-6 text-center">
+<p class="text-primary/40 text-xs uppercase tracking-[0.3em]">
+                    © MMXXIV Ágora Literaria - Custodios del Manuscrito
+                </p>
+</footer>
+</div>
+</div>
+<div class="fixed inset-0 pointer-events-none z-[-1] opacity-20" data-alt="Vintage parchment paper texture for background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9x_C2biXYE-Hhwafyh32TOF6xKxzYkINuvSDEaoiqYX5ibX5eS93xL4pH6HrAKRJfj7MN6cRrRXNMGNWB1bOHGGl_KQ4olDW-BbqXwykqt4eUeLyy2TtFKxmrUen_Aw5dducE4V6ZqfCSsgmU9eX1uXwQecHvDBo8lsGkVbG3sY7n1Jg5A3qUTECfzhkKigWh7jewugNS6UlRssAQNDWaB5RuZK-1kBmPFNA67d6R8JRpIwkRksKywWqgYhCrNL3d0VCBfRgt');">
+</div>
+</body></html>
