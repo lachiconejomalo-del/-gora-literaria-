@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ágora Literaria - Ecosistema Conectado</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -15,123 +16,179 @@
                     colors: {
                         "primary": "#eebd2b",
                         "background-light": "#f8f7f6",
-                        "background-dark": "#0a1128", // Deep navy blue as requested
+                        "background-dark": "#0a1128",
+                        "parchment": "#f4e4bc",
                     },
-                    fontFamily: {
-                        "display": ["Newsreader", "serif"]
-                    },
+                    fontFamily: { "display": ["Newsreader", "serif"] },
                     borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
             },
         }
     </script>
-<style>
+
+    <style>
+        .view { display: none; }
+        .view.active { display: block; }
+        
         .ornate-border {
             border: 2px solid #eebd2b;
             position: relative;
             padding: 2rem;
         }
-        .ornate-border::before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            border: 1px solid #eebd2b;
-            pointer-events: none;
-        }
         .fleur-de-lis-bg {
             background-image: radial-gradient(circle at center, rgba(238, 189, 43, 0.05) 0%, transparent 70%);
+        }
+        .parchment-card {
+            background: linear-gradient(45deg, #f4e4bc 0%, #e2d1a4 100%);
+            border: 2px solid #eebd2b;
+            color: #221d10;
         }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden fleur-de-lis-bg">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/30 px-6 md:px-20 py-6">
-<div class="flex items-center gap-3 text-primary">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">history_edu</span>
-<h2 class="text-2xl font-bold italic tracking-tight">Ágora Literaria</h2>
-</div>
-<nav class="hidden md:flex flex-1 justify-end gap-10 items-center">
-<a class="text-slate-100 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Biblioteca</a>
-<a class="text-slate-100 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Círculos</a>
-<a class="text-slate-100 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Crónicas</a>
-<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-primary text-background-dark text-sm font-bold uppercase tracking-widest hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
-                        Entrar
-                    </button>
-</nav>
-</header>
-<main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
-<div class="max-w-[1000px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="flex flex-col gap-8 text-center lg:text-left">
-<div class="space-y-4">
-<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1">settings_suggest</span>
-<h1 class="text-primary text-5xl md:text-7xl font-black leading-tight italic">
-                                El Arte de la <br/>Palabra Eterna
-                            </h1>
-<p class="text-slate-300 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed font-light italic">
-                                "Donde las letras cobran vida en un rincón del pasado real. Un santuario para los amantes del manuscrito y la sabiduría clásica."
-                            </p>
-</div>
-<div class="pt-4">
-<button class="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-primary text-primary rounded-lg font-bold uppercase tracking-widest hover:bg-primary hover:text-background-dark transition-all duration-300 group">
-                                Explorar el Legado
-                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">auto_stories</span>
-</button>
-</div>
-</div>
-<div class="w-full max-w-md mx-auto">
-<div class="ornate-border bg-background-dark/50 backdrop-blur-sm shadow-2xl rounded-xl">
-<div class="flex flex-col items-center mb-8">
-<span class="material-symbols-outlined text-primary text-5xl mb-2" style="font-variation-settings: 'FILL' 1">local_florist</span>
-<h2 class="text-3xl font-bold text-primary italic">Únete al Ágora</h2>
-<div class="h-px w-24 bg-primary mt-4"></div>
-</div>
-<form class="space-y-6" onsubmit="event.preventDefault(); window.location.href='{{DATA:SCREEN:SCREEN_9}}';">
-<div class="flex flex-col gap-2">
-<label class="text-primary text-sm uppercase tracking-widest font-semibold ml-1">Nombre Completo</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">person</span>
-<input class="w-full pl-12 pr-4 py-4 bg-background-dark border border-primary/30 rounded-lg text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-500 italic" placeholder="Ej. Alejandro Dumas" required="true" type="text"/>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-primary text-sm uppercase tracking-widest font-semibold ml-1">Correo Electrónico</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">mail</span>
-<input class="w-full pl-12 pr-4 py-4 bg-background-dark border border-primary/30 rounded-lg text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-500 italic" placeholder="usuario@manuscrito.com" required="true" type="email"/>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-primary text-sm uppercase tracking-widest font-semibold ml-1">Contraseña</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">lock</span>
-<input class="w-full pl-12 pr-4 py-4 bg-background-dark border border-primary/30 rounded-lg text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-500 italic" minlength="6" placeholder="••••••••" required="true" type="password"/>
-</div>
-</div>
-<button class="w-full py-4 bg-primary text-background-dark font-bold uppercase tracking-[0.2em] rounded-lg shadow-lg hover:shadow-primary/40 active:scale-[0.98] transition-all" type="submit">
-                                    Inscribirse
-                                </button>
-<div class="text-center mt-6">
-<p class="text-slate-400 italic">
-                                        ¿Ya eres miembro? 
-                                        <a class="text-primary hover:underline font-semibold ml-1 tracking-wide" href="{{DATA:SCREEN:SCREEN_8}}">Iniciar Sesión</a>
-</p>
-</div>
-</form>
-</div>
-</div>
-</div>
-</main>
-<footer class="mt-auto border-t border-primary/10 py-8 px-6 text-center">
-<p class="text-primary/40 text-xs uppercase tracking-[0.3em]">
-                    © MMXXIV Ágora Literaria - Custodios del Manuscrito
-                </p>
-</footer>
-</div>
-</div>
-<div class="fixed inset-0 pointer-events-none z-[-1] opacity-20" data-alt="Vintage parchment paper texture for background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9x_C2biXYE-Hhwafyh32TOF6xKxzYkINuvSDEaoiqYX5ibX5eS93xL4pH6HrAKRJfj7MN6cRrRXNMGNWB1bOHGGl_KQ4olDW-BbqXwykqt4eUeLyy2TtFKxmrUen_Aw5dducE4V6ZqfCSsgmU9eX1uXwQecHvDBo8lsGkVbG3sY7n1Jg5A3qUTECfzhkKigWh7jewugNS6UlRssAQNDWaB5RuZK-1kBmPFNA67d6R8JRpIwkRksKywWqgYhCrNL3d0VCBfRgt');">
-</div>
-</body></html>
+
+    <section id="view-registro" class="view active">
+        <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden fleur-de-lis-bg">
+            <main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
+                <div class="max-w-[1000px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="flex flex-col gap-8 text-center lg:text-left">
+                        <div class="space-y-4">
+                            <span class="material-symbols-outlined text-primary text-6xl">history_edu</span>
+                            <h1 class="text-primary text-5xl md:text-7xl font-black italic">El Arte de la Palabra Eterna</h1>
+                            <p class="text-slate-300 text-lg italic">"Un santuario para los amantes del manuscrito."</p>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-md mx-auto">
+                        <div class="ornate-border bg-background-dark/50 backdrop-blur-sm rounded-xl">
+                            <h2 class="text-3xl font-bold text-primary italic text-center mb-8">Únete al Ágora</h2>
+                            <form class="space-y-6">
+                                <input id="user-name" class="w-full p-4 bg-background-dark border border-primary/30 rounded-lg text-white" placeholder="Nombre completo" type="text"/>
+                                <button type="button" onclick="navigateTo('view-feed')" class="w-full py-4 bg-primary text-background-dark font-bold uppercase tracking-widest rounded-lg">Inscribirse</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <section id="view-feed" class="view">
+        <header class="flex items-center justify-between border-b border-primary/20 bg-slate-900/50 backdrop-blur-md px-6 py-4 sticky top-0 z-50">
+            <div class="flex items-center gap-3 text-primary cursor-pointer" onclick="navigateTo('view-registro')">
+                <span class="material-symbols-outlined text-4xl">flare</span>
+                <h2 class="text-2xl font-bold">Ágora Literaria</h2>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="navigateTo('view-admin')" class="size-10 rounded-full border-2 border-primary overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArZxzZy_DOoVG9l_MuJ3xmZIhLCRWFmZSMQ4youYHzxZx1-BMDU2jou3lGgDHUgQwjM_Alzz5YrYDswIWiVCGQ3_Wdy3FlzFx20HGNC-8XGjEIT2rUg9YfQY8xhpaV1vLWYYzFhsuX7GrlEwvAgp52dGqEb-2DLr0uargq7Xf8xOgCq-zT1o5MPBLuOTzQjE9O8y81XYEkZxOqxfgvxXTYVlmrC1ZmKfO5Ol_vSSk2VUKnM3uv_p717euzG-hA4KV0FPPVJoC5" class="w-full h-full object-cover">
+                </button>
+            </div>
+        </header>
+        <div class="flex">
+            <aside class="w-72 hidden lg:flex flex-col border-r border-primary/10 p-6 gap-4">
+                <button onclick="navigateTo('view-galeria')" class="flex items-center gap-3 p-4 rounded-lg bg-primary text-slate-900 font-bold">
+                    <span class="material-symbols-outlined">menu_book</span> Galería de Poemas
+                </button>
+            </aside>
+            <main class="flex-1 p-8">
+                <h1 class="text-4xl font-black text-primary mb-8">Publicaciones Recientes</h1>
+                <article class="bg-slate-900/50 border border-primary/10 rounded-xl p-8 mb-8">
+                    <h2 class="text-3xl font-bold mb-4">El susurro del viento</h2>
+                    <p class="text-slate-400 italic text-lg">"Un lamento que cruza los valles olvidados..."</p>
+                    <div class="mt-6 flex items-center gap-4">
+                        <span id="display-name" class="text-primary font-bold">Invitado</span>
+                        <button class="bg-primary/10 text-primary border border-primary px-4 py-2 rounded">Leer más</button>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </section>
+
+    <section id="view-galeria" class="view">
+        <header class="border-b border-primary/20 bg-background-dark/50 p-6">
+            <button onclick="navigateTo('view-feed')" class="text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined">arrow_back</span> Volver al Feed
+            </button>
+        </header>
+        <main class="p-12 max-w-7xl mx-auto">
+            <h2 class="text-5xl font-black italic mb-12 text-center">Poemas y Frases Célebres</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="parchment-card p-8 rounded-lg shadow-2xl">
+                    <span class="material-symbols-outlined text-4xl mb-4">format_quote</span>
+                    <p class="text-2xl italic leading-relaxed">"Puedo escribir los versos más tristes esta noche..."</p>
+                    <p class="mt-6 font-bold text-right text-amber-900">— Pablo Neruda</p>
+                </div>
+                <div class="parchment-card p-8 rounded-lg shadow-2xl">
+                    <span class="material-symbols-outlined text-4xl mb-4">history_edu</span>
+                    <p class="text-2xl italic leading-relaxed">"La verdadera sabiduría está en reconocer la propia ignorancia."</p>
+                    <p class="mt-6 font-bold text-right text-amber-900">— Sócrates</p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <section id="view-admin" class="view">
+        <header class="border-b border-primary/20 p-6 flex justify-between items-center bg-background-dark">
+            <h2 class="text-2xl font-bold text-primary italic">Gabinete de Control</h2>
+            <button onclick="navigateTo('view-feed')" class="bg-primary text-black px-4 py-2 rounded font-bold">Ver Sitio Público</button>
+        </header>
+        <main class="p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-primary/5 border border-primary/20 p-6 rounded-xl">
+                    <p class="text-slate-400">Total Usuarios</p>
+                    <h3 class="text-4xl font-bold">1,284</h3>
+                </div>
+                <div class="bg-primary/5 border border-primary/20 p-6 rounded-xl">
+                    <p class="text-slate-400">Artículos</p>
+                    <h3 class="text-4xl font-bold">456</h3>
+                </div>
+                <div class="bg-primary/5 border border-primary/20 p-6 rounded-xl">
+                    <p class="text-slate-400">Estado</p>
+                    <h3 class="text-4xl font-bold text-emerald-500">Activo</h3>
+                </div>
+            </div>
+            <div class="bg-slate-900/50 rounded-xl overflow-hidden border border-primary/10">
+                <table class="w-full text-left">
+                    <thead class="bg-primary/10 text-primary">
+                        <tr>
+                            <th class="p-4">Título</th>
+                            <th class="p-4">Autor</th>
+                            <th class="p-4">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-white/5">
+                            <td class="p-4 italic">La Retórica del Silencio</td>
+                            <td class="p-4 text-slate-400">J. P. Sartre</td>
+                            <td class="p-4 text-emerald-500 font-bold">Publicado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </section>
+
+    <script>
+        // Lógica de navegación
+        function navigateTo(viewId) {
+            // Ocultar todas las vistas
+            document.querySelectorAll('.view').forEach(view => {
+                view.classList.remove('active');
+            });
+            // Mostrar la seleccionada
+            document.getElementById(viewId).classList.add('active');
+
+            // Lógica especial para capturar el nombre del usuario
+            if(viewId === 'view-feed') {
+                const nameInput = document.getElementById('user-name').value;
+                if(nameInput) {
+                    document.getElementById('display-name').innerText = nameInput;
+                }
+            }
+            
+            // Hacer scroll al inicio al cambiar de vista
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
